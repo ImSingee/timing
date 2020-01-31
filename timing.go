@@ -2,7 +2,6 @@ package timing
 
 import (
 	"io/ioutil"
-	"log"
 	"net/http"
 	"strings"
 )
@@ -25,8 +24,6 @@ func request(method string, url string, body string) (*response, error) {
 	if !IsInitialed() {
 		return nil, &InvalidRequest{"未初始化"}
 	}
-
-	log.Printf("%s %s", method, url)
 
 	var req *http.Request
 	var err error
